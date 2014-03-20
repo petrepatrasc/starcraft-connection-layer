@@ -5,10 +5,10 @@ namespace petrepatrasc\StarcraftConnectionLayerBundle\Tests\Unit\Service;
 
 use petrepatrasc\StarcraftConnectionLayerBundle\Service\BlizzardApi;
 use petrepatrasc\StarcraftConnectionLayerBundle\Service\GGTracker;
-use petrepatrasc\StarcraftConnectionLayerBundle\Service\OverviewService;
+use petrepatrasc\StarcraftConnectionLayerBundle\Service\ConnectionService;
 use petrepatrasc\StarcraftConnectionLayerBundle\Service\SCRanks;
 
-class OverviewServiceTest extends \PHPUnit_Framework_TestCase
+class ConnectionServiceTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * No use in mocking the objects at the moment, so just testing the getters and setters for code coverage.
@@ -21,7 +21,7 @@ class OverviewServiceTest extends \PHPUnit_Framework_TestCase
         $ggTrackerService = new GGTracker();
         $scRanksService = new SCRanks();
 
-        $overviewService = new OverviewService();
+        $overviewService = new ConnectionService();
         $overviewService->setBlizzardApi($blizzardApiService)
             ->setGgTracker($ggTrackerService)
             ->setScRanks($scRanksService);

@@ -6,7 +6,7 @@ namespace petrepatrasc\StarcraftConnectionLayerBundle\Service;
  * Handles exposure of all of the supported services.
  * @package petrepatrasc\StarcraftConnectionLayerBundle\Service
  */
-class OverviewService
+class ConnectionService
 {
 
     /**
