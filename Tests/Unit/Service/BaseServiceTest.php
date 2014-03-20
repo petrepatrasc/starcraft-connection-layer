@@ -1,6 +1,6 @@
 <?php
 
-namespace petrepatrasc\StarcraftConnectionLayerBundle\Tests\Integration\Service;
+namespace petrepatrasc\StarcraftConnectionLayerBundle\Tests\Unit\Service;
 
 use petrepatrasc\StarcraftConnectionLayerBundle\Service\GGTracker;
 

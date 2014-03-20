@@ -18,8 +18,6 @@ class SCRanks extends BaseService implements ServiceInterface
 
         if (!is_null($apiKey)) {
             $this->authorizationToken = $apiKey;
-        } else {
-            throw new StarcraftConnectionLayerException("No API key defined for the SC2 Ranks service.");
         }
     }
 

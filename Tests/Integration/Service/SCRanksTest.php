@@ -42,6 +42,9 @@ class SCRanksTest extends \PHPUnit_Framework_TestCase
      */
     public function testNullApplicationKey() {
         $this->scRanksApi = new SCRanks();
+
+        $response = $this->scRanksApi->retrieveData('http://api.sc2ranks.com/v2/data');
+        $this->assertNull($response);
     }
 
     /**
