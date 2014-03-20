@@ -15,7 +15,13 @@ class GGTrackerTest extends \PHPUnit_Framework_TestCase
     public function setUp() {
         parent::setUp();
 
-        $this->ggTrackerApi = new GGTracker();
+        $this->ggTrackerApi = new GGTracker(getenv('SYMFONY__SC2RANKS_API_KEY'));
+    }
+
+    public function tearDown() {
+        parent::tearDown();
+
+        sleep(1);
     }
 
     /**
@@ -25,6 +31,15 @@ class GGTrackerTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidUrl() {
         $this->ggTrackerApi->retrieveData('http://api.ggtracker.com/api/v1/identitiess/1455.json');
+    }
+
+    /**
+     * @expectedException \petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLayerException
+     * @expectedExceptionMessage Not Found
+     * @expectedExceptionCode 404
+     */
+    public function testInvalidPlayer() {
+        $this->ggTrackerApi->retrieveData('http://api.ggtracker.com/api/v1/identities/14555555555.json');
     }
 
     /**
