@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "A PHP 5.3+ cURL wrapper that allows easy access to popular Starcraft 2 service APIs.",
     "keywords": ["PHP", "Starcraft 2", "API", "Symfony"],
-    "homepage": "http://petrepatrasc.github.io/starcraft-connection-layer",
+    "homepage": "https://github.com/petrepatrasc/starcraft-connection-layer",
     "license": "MIT",
     "authors": [
         {

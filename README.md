@@ -7,4 +7,7 @@ Starcraft Connection Layer
 [![Latest Stable Version](https://poser.pugx.org/petrepatrasc/starcraft-connection-layer/v/stable.png)](https://packagist.org/packages/petrepatrasc/starcraft-connection-layer)
 [![License](https://poser.pugx.org/petrepatrasc/starcraft-connection-layer/license.png)](https://packagist.org/packages/petrepatrasc/starcraft-connection-layer)
 
-Currently keeping this a secret as it is very early in development, so hush hush.
+Introduction
+------------
+
+The *Starcraft Connection Layer* allows you to access a number of popular API services within the Starcraft 2 community using a simple and well-defined architecture, that offers consistency in terms of authentication and data retrieval.
