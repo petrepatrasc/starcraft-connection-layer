@@ -5,6 +5,11 @@ namespace petrepatrasc\StarcraftConnectionLayerBundle\Service;
 
 use petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLayerException;
 
+/**
+ * Keeps the curl wrapper used in order to expose the services and offers some functionality that should be implemented
+ * by all of the individual service implementations.
+ * @package petrepatrasc\StarcraftConnectionLayerBundle\Service
+ */
 abstract class BaseService
 {
     /**

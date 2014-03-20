@@ -48,9 +48,13 @@ class BlizzardApiTest extends \PHPUnit_Framework_TestCase
         $this->blizzardApi->retrieveData('http://eu.battle.net/api/sc2/profile/2048419/1/LionHeart/', 'BNET c1fbf21b79c03191d:+3fE0RaKc+PqxN0gi8va5GQC35A=');
     }
 
-    public function testValidDataRetrieval()
+    /**
+     * @param $url
+     * @dataProvider validDataProvider
+     */
+    public function testValidDataRetrieval($url)
     {
-        $response = $this->blizzardApi->retrieveData('http://eu.battle.net/api/sc2/profile/2048419/1/LionHeart/');
+        $response = $this->blizzardApi->retrieveData($url);
 
         $this->assertNotNull($response);
         $this->assertGreaterThan(0, strlen($response));
@@ -62,5 +66,18 @@ class BlizzardApiTest extends \PHPUnit_Framework_TestCase
             }
         }
         $this->assertTrue($jsonContentFound);
+    }
+
+    public function validDataProvider() {
+        return array(
+            array('http://eu.battle.net/api/sc2/profile/2048419/1/LionHeart/'),
+            array('http://eu.battle.net/api/sc2/profile/2048419/1/LionHeart/ladders'),
+            array('http://eu.battle.net/api/sc2/profile/2048419/1/LionHeart/matches'),
+            array('http://eu.battle.net/api/sc2/ladder/2000'),
+            array('http://eu.battle.net/api/sc2/ladder/grandmaster'),
+            array('http://eu.battle.net/api/sc2/ladder/grandmaster/last'),
+            array('http://eu.battle.net/api/sc2/data/rewards'),
+            array('http://eu.battle.net/api/sc2/data/achievements'),
+        );
     }
 }

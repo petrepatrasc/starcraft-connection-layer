@@ -5,6 +5,10 @@ namespace petrepatrasc\StarcraftConnectionLayerBundle\Service;
 
 use petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLayerException;
 
+/**
+ * Offers integration with the Blizzard API.
+ * @package petrepatrasc\StarcraftConnectionLayerBundle\Service
+ */
 class BlizzardApi extends BaseService implements ServiceInterface
 {
     /**

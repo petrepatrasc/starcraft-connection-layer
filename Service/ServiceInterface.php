@@ -2,7 +2,10 @@
 
 namespace petrepatrasc\StarcraftConnectionLayerBundle\Service;
 
-
+/**
+ * Defines methods that should be implemented by all of the child classes.
+ * @package petrepatrasc\StarcraftConnectionLayerBundle\Service
+ */
 interface ServiceInterface {
 
     /**
