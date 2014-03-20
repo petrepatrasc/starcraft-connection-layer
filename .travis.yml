@@ -12,4 +12,4 @@ after_script:
 - php vendor/bin/coveralls -v
 env:
   global:
-    secure: YpPohPBkO4mkiiPXU6aJSuIiD0mnuO6a6LtbZJYyzgsxXEwVKfMJ1cKbHM+m9vnaGeFgY6xiQwtiKcE8Uo46uobA2ZkZgPbowdvU2BED7D1TH2V47GyfCxIMFZrszxovLEgvAhTqrUlRbon4/dnzgFUU/Sh5ARe1a0X+5xSxmoQ=
+    secure: d8cFDmTUTvlRtUZN85sBcYKCE4JupEZqdGdnAtn+2y/G/2CwV/yVbqytpv5NLp0v/OCD9NdbFIvT7vkSoqlocHw2/M8y8vBTksny079IdgGaaPYvkSNNv+4HLLJs3gDCYs8dCbrGNM8MZZNydQ7aSocrrvfRy5QLtSgAVTme5xk=

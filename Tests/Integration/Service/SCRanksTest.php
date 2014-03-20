@@ -15,7 +15,7 @@ class SCRanksTest extends \PHPUnit_Framework_TestCase
     public function setUp() {
         parent::setUp();
 
-        $applicationKeyStoredInEnvironmentalVariable = getenv("SYMFONY__SC2RANKS_API_KEY");
+        $applicationKeyStoredInEnvironmentalVariable = getenv("SYMFONY__SC2RANKS__API__KEY");
         $this->scRanksApi = new SCRanks($applicationKeyStoredInEnvironmentalVariable);
     }
 
