@@ -1,0 +1,7 @@
+parameters:
+#    starcraft_connection_layer.example.class: petrepatrasc\StarcraftConnectionLayerBundle\Example
+
+services:
+#    starcraft_connection_layer.example:
+#        class: %starcraft_connection_layer.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
