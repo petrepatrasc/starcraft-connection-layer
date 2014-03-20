@@ -44,7 +44,6 @@ class GGTrackerTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLayerException
-     * @expectedExceptionMessage Couldn't resolve host 'api.ggtracker.comTEST'
      */
     public function testWebsiteThatDoesNotExist()
     {

@@ -13,11 +13,13 @@ class BlizzardApi extends BaseService implements ServiceInterface
 {
     /**
      * {@inheritdoc}
+     * @param string $url
+     * @return null|string
      */
-    public function retrieveData($url, $authorizationToken = null)
+    public function retrieveData($url)
     {
-        if (!is_null($authorizationToken)) {
-            $this->curlWrapper->setHeader('Authorization', $authorizationToken);
+        if (!is_null($this->getAuthorizationToken())) {
+            $this->curlWrapper->setHeader('Authorization', $this->getAuthorizationToken());
         }
 
         $this->retrieve($url);

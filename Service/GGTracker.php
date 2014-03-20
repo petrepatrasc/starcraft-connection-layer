@@ -12,8 +12,10 @@ class GGTracker extends BaseService implements ServiceInterface
 
     /**
      * {@inheritdoc}
+     * @param string $url
+     * @return null|string
      */
-    public function retrieveData($url, $authorizationToken = null)
+    public function retrieveData($url)
     {
         $this->retrieve($url);
 

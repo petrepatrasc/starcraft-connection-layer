@@ -37,6 +37,23 @@ class SCRanksTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($jsonContentFound);
     }
 
+    /**
+     * @expectedException \petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLayerException
+     */
+    public function testNullApplicationKey() {
+        $this->scRanksApi = new SCRanks();
+    }
+
+    /**
+     * @expectedException \petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLayerException
+     */
+    public function testInvalidApplicationKey() {
+        $this->scRanksApi = new SCRanks("TEST");
+
+        $response = $this->scRanksApi->retrieveData('http://api.sc2ranks.com/v2/data');
+        $this->assertNull($response);
+    }
+
     public function validDataProvider() {
         return array(
             array('http://api.sc2ranks.com/v2/data')

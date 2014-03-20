@@ -21,7 +21,6 @@ class BlizzardApiTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLayerException
-     * @expectedExceptionMessage Couldn't resolve host 'eu.battle.netTEST'
      */
     public function testWebsiteThatDoesNotExist()
     {
@@ -45,7 +44,8 @@ class BlizzardApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidAuthenticationToken()
     {
-        $this->blizzardApi->retrieveData('http://eu.battle.net/api/sc2/profile/2048419/1/LionHeart/', 'BNET c1fbf21b79c03191d:+3fE0RaKc+PqxN0gi8va5GQC35A=');
+        $this->blizzardApi->setAuthorizationToken("BNET c1fbf21b79c03191d:+3fE0RaKc+PqxN0gi8va5GQC35A====");
+        $this->blizzardApi->retrieveData('http://eu.battle.net/api/sc2/profile/2048419/1/LionHeart/');
     }
 
     /**

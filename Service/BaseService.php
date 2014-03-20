@@ -17,6 +17,13 @@ abstract class BaseService
      */
     protected $curlWrapper;
 
+    /**
+     * Authorization token used in order to call the service.
+     *
+     * @var string
+     */
+    protected $authorizationToken;
+
     public function __construct()
     {
         $this->curlWrapper = new \Curl();
@@ -51,5 +58,23 @@ abstract class BaseService
     public function getCurlWrapper()
     {
         return $this->curlWrapper;
+    }
+
+    /**
+     * @param string $apiKey
+     * @return $this
+     */
+    public function setAuthorizationToken($apiKey)
+    {
+        $this->authorizationToken = $apiKey;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthorizationToken()
+    {
+        return $this->authorizationToken;
     }
 }

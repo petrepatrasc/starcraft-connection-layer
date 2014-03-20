@@ -11,25 +11,24 @@ use petrepatrasc\StarcraftConnectionLayerBundle\Exception\StarcraftConnectionLay
 class SCRanks extends BaseService implements ServiceInterface
 {
     /**
-     * Application key used in order to call the service.
-     *
-     * @var string
-     */
-    protected $apiKey;
-
-    /**
      * @param string $apiKey The application key used in order to call the service.
      */
-    public function __construct($apiKey) {
+    public function __construct($apiKey = null) {
         parent::__construct();
 
-        $this->apiKey = $apiKey;
+        if (!is_null($apiKey)) {
+            $this->authorizationToken = $apiKey;
+        } else {
+            throw new StarcraftConnectionLayerException("No API key defined for the SC2 Ranks service.");
+        }
     }
 
     /**
      * {@inheritdoc}
+     * @param string $url
+     * @return null|string
      */
-    public function retrieveData($url, $authorizationToken = null)
+    public function retrieveData($url)
     {
         $this->retrieve($url);
 
@@ -42,7 +41,7 @@ class SCRanks extends BaseService implements ServiceInterface
     protected function retrieve($url)
     {
         $this->curlWrapper->get($url, array(
-            'api_key' => $this->apiKey
+            'api_key' => $this->getAuthorizationToken()
         ));
 
         $response = json_decode($this->curlWrapper->response, true);
@@ -53,24 +52,4 @@ class SCRanks extends BaseService implements ServiceInterface
 
         parent::retrieve($url);
     }
-
-    /**
-     * @param string $apiKey
-     * @return $this
-     */
-    public function setApiKey($apiKey)
-    {
-        $this->apiKey = $apiKey;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getApiKey()
-    {
-        return $this->apiKey;
-    }
-
-
 }
